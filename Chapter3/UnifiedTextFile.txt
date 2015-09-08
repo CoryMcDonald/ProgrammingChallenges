@@ -1,0 +1,295 @@
+
+---------- Forwarded message ----------
+From: UVa Online Judge <noreply@onlinejudge.org>
+Date: Tue, Sep 8, 2015 at 10:49 AM
+Subject: Submission 16066586 - Accepted
+To: Cory McDonald <cxm072@email.uark.edu>
+
+
+Hi,
+
+This is an automated response from UVa Online Judge.
+
+Your submission with number 16066586 for the problem 10188 - Automated Judge Script has succeeded with verdict Accepted.
+
+Congratulations! Now it is time to try a new problem.
+
+Best regards,
+
+The UVa Online Judge team
+
+
+---------- Forwarded message ----------
+From: UVa Online Judge <noreply@onlinejudge.org>
+Date: Tue, Sep 8, 2015 at 9:04 AM
+Subject: Submission 16066025 - Accepted
+To: Cory McDonald <cxm072@email.uark.edu>
+
+
+Hi,
+
+This is an automated response from UVa Online Judge.
+
+Your submission with number 16066025 for the problem 10082 - WERTYU has succeeded with verdict Accepted.
+
+Congratulations! Now it is time to try a new problem.
+
+Best regards,
+
+The UVa Online Judge team
+
+
+
+---------- Forwarded message ----------
+From: UVa Online Judge <noreply@onlinejudge.org>
+Date: Mon, Sep 7, 2015 at 6:29 PM
+Subject: Submission 16062484 - Accepted
+To: Cory McDonald <cxm072@email.uark.edu>
+
+
+Hi,
+
+This is an automated response from UVa Online Judge.
+
+Your submission with number 16062484 for the problem 10252 - Common Permutation has succeeded with verdict Accepted.
+
+Congratulations! Now it is time to try a new problem.
+
+Best regards,
+
+The UVa Online Judge team
+
+//Automated Judge Script
+import java.util.*;
+import java.io.*;
+class Main
+{
+   public static void main(String[] args)
+   {
+      Scanner scan = new Scanner(System.in);
+      int run = 1;
+      while(scan.hasNextLine())
+      {
+         int linesOfSolution = scan.nextInt();
+         if(linesOfSolution ==0)
+            break;
+            
+         String solution = "";
+         for(int i=0; i<=linesOfSolution; i++)
+            solution += scan.nextLine();
+         
+         String student = "";
+         int linesOfStudent = scan.nextInt();
+         for(int i=0; i<=linesOfStudent; i++)
+            student += scan.nextLine();
+         
+         System.out.print("Run #" + run + ": ");
+         if(solution.equals(student) && linesOfStudent == linesOfSolution)
+            System.out.println("Accepted");
+         else if(solution.replaceAll("[^0-9]","").equals(student.replaceAll("[^0-9]","")))
+            System.out.println("Presentation Error");
+         else
+            System.out.println("Wrong Answer");
+         run++;
+      }
+      
+   }
+}
+
+//WERTYU
+import java.util.*;
+import java.io.*;
+class Main
+{
+   public static void main(String[] args)
+   {
+      Scanner scan = new Scanner(System.in);
+      while(scan.hasNextLine())
+      {
+         String input = scan.nextLine();
+         for(int i=0; i < input.length(); i++)
+            System.out.print(decode(input.charAt(i)));
+         System.out.println();
+      }
+   }
+	private static char decode(char inputChar) {
+		char outputChar = 0;
+		switch (inputChar) {
+		// first Row
+		case '2':
+			outputChar = '1';
+			break;
+		case '3':
+			outputChar = '2';
+			break;
+		case '4':
+			outputChar = '3';
+			break;
+		case '5':
+			outputChar = '4';
+			break;
+		case '6':
+			outputChar = '5';
+			break;
+		case '7':
+			outputChar = '6';
+			break;
+		case '8':
+			outputChar = '7';
+			break;
+		case '9':
+			outputChar = '8';
+			break;
+		case '0':
+			outputChar = '9';
+			break;
+		case '-':
+			outputChar = '0';
+			break;
+		case '=':
+			outputChar = '-';
+			break;
+		// second Row
+		case 'W':
+			outputChar = 'Q';
+			break;
+		case 'E':
+			outputChar = 'W';
+			break;
+		case 'R':
+			outputChar = 'E';
+			break;
+		case 'T':
+			outputChar = 'R';
+			break;
+		case 'Y':
+			outputChar = 'T';
+			break;
+		case 'U':
+			outputChar = 'Y';
+			break;
+		case 'I':
+			outputChar = 'U';
+			break;
+		case 'O':
+			outputChar = 'I';
+			break;
+		case 'P':
+			outputChar = 'O';
+			break;
+		case '[':
+			outputChar = 'P';
+			break;
+		case ']':
+			outputChar = '[';
+			break;
+		case '\\':
+			outputChar = ']';
+			break;
+		// Third Row
+		case 'S':
+			outputChar = 'A';
+			break;
+		case 'D':
+			outputChar = 'S';
+			break;
+		case 'F':
+			outputChar = 'D';
+			break;
+		case 'G':
+			outputChar = 'F';
+			break;
+		case 'H':
+			outputChar = 'G';
+			break;
+		case 'J':
+			outputChar = 'H';
+			break;
+		case 'K':
+			outputChar = 'J';
+			break;
+		case 'L':
+			outputChar = 'K';
+			break;
+		case ';':
+			outputChar = 'L';
+			break;
+		case '\'':
+			outputChar = ';';
+			break;
+		// Fourth Row
+		case 'X':
+			outputChar = 'Z';
+			break;
+		case 'C':
+			outputChar = 'X';
+			break;
+		case 'V':
+			outputChar = 'C';
+			break;
+		case 'B':
+			outputChar = 'V';
+			break;
+		case 'N':
+			outputChar = 'B';
+			break;
+		case 'M':
+			outputChar = 'N';
+			break;
+		case ',':
+			outputChar = 'M';
+			break;
+		case '.':
+			outputChar = ',';
+			break;
+		case '/':
+			outputChar = '.';
+			break;
+		default:
+			outputChar = inputChar;
+			break;
+		}
+		return outputChar;
+	}
+}
+
+
+//Common Permutation
+import java.util.*;
+
+class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        while (scan.hasNextLine())
+        {
+            String word1 = scan.nextLine();
+            String word2 = scan.nextLine();
+            List<Character> A = new ArrayList<Character>();
+            List<Character> B = new ArrayList<Character>();
+            for (char c : word1.toCharArray())
+                A.add(c);
+            for (char c : word2.toCharArray())
+                B.add(c);
+            Object[] results = Intersect(A, B).toArray();
+            Arrays.sort(results);
+            //Regex to replace whitespace, brackets, and commas.
+            String result = Arrays.toString(results).replaceAll("\\[|,|\\s|\\]", "");
+            System.out.println(result);
+        }
+    }
+    public static List<Character> Intersect(List<Character> A, List<Character> B)
+    {
+        List<Character> Return = new ArrayList<Character>();
+        for(int i=0; i<A.size();i++)
+        {
+            if(B.contains(A.get(i)))
+            {
+                B.remove(A.get(i));
+                Return.add(A.get(i));
+            }
+        }
+        return Return;
+    }
+}

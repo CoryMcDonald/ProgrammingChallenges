@@ -1,3 +1,24 @@
+
+// ---------- Forwarded message ----------
+// From: UVa Online Judge <noreply@onlinejudge.org>
+// Date: Mon, Sep 7, 2015 at 6:29 PM
+// Subject: Submission 16062484 - Accepted
+// To: Cory McDonald <cxm072@email.uark.edu>
+
+
+// Hi,
+
+// This is an automated response from UVa Online Judge.
+
+// Your submission with number 16062484 for the problem 10252 - Common Permutation has succeeded with verdict Accepted.
+
+// Congratulations! Now it is time to try a new problem.
+
+// Best regards,
+
+// The UVa Online Judge team
+
+
 import java.util.*;
 
 class Main
