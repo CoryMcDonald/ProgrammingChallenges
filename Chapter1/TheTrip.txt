@@ -1,5 +1,25 @@
-import java.util.*;
+---------- Forwarded message ----------
+From: UVa Online Judge <noreply@onlinejudge.org>
+Date: Tue, Aug 25, 2015 at 12:10 PM
+Subject: Submission 15991076 - Accepted
+To: Cory McDonald <cxm072@email.uark.edu>
 
+
+Hi,
+
+This is an automated response from UVa Online Judge.
+
+Your submission with number 15991076 for the problem 10137 - The Trip has succeeded with verdict Accepted.
+
+Congratulations! Now it is time to try a new problem.
+
+Best regards,
+
+The UVa Online Judge team
+
+---------
+
+import java.util.*;
 public class Main {
 
 	public static void main(String[] args) {

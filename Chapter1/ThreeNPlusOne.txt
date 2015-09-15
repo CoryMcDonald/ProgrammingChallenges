@@ -1,0 +1,72 @@
+---------- Forwarded message ----------
+From: UVa Online Judge <noreply@onlinejudge.org>
+Date: Tue, Aug 25, 2015 at 11:38 AM
+Subject: Submission 15990920 - Accepted
+To: Cory McDonald <cxm072@email.uark.edu>
+
+
+Hi,
+
+This is an automated response from UVa Online Judge.
+
+Your submission with number 15990920 for the problem 100 - The 3n + 1 problem has succeeded with verdict Accepted.
+
+Congratulations! Now it is time to try a new problem.
+
+Best regards,
+
+The UVa Online Judge team
+
+------------------
+
+import java.util.Scanner;
+
+class Main {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		while (input.hasNextInt()) {
+			int i = input.nextInt();
+			int j = input.nextInt();
+			int start = 0;
+			int end = 0;
+			int cycleLength = 0;
+			if (i < j) {
+				start = i;
+				end = j;
+			} else {
+				start = j;
+				end = i;
+			}
+			
+			for (int n = start; n <= end; n++) {
+				cycleLength = Math.max(cycleLength, getCycleLength(n));
+			}
+			
+			System.out.println(i + " " + j + " " + cycleLength);
+		}
+	}
+	
+	public static int getCycleLength(long n) {
+		int length;
+		if (n == 1) {
+			length = 1;
+		}else
+		{
+		  length = 1 + getCycleLength(nextNumber(n));
+		}
+		return length;
+	}
+	
+	public static long nextNumber(long n) {
+		long x;
+		if (n % 2 == 0) {
+			x = n / 2;
+		} else {
+			x = 3 * n + 1;
+		}
+		return x;
+	}
+
+}
