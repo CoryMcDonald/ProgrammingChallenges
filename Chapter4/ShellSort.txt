@@ -1,3 +1,22 @@
+// ---------- Forwarded message ----------
+// From: UVa Online Judge <noreply@onlinejudge.org>
+// Date: Fri, Sep 18, 2015 at 9:31 PM
+// Subject: Submission 16126521 - Accepted
+// To: Cory McDonald <cxm072@email.uark.edu>
+
+
+// Hi,
+
+// This is an automated response from UVa Online Judge.
+
+// Your submission with number 16126521 for the problem 10152 - ShellSort has succeeded with verdict Accepted.
+
+// Congratulations! Now it is time to try a new problem.
+
+// Best regards,
+
+// The UVa Online Judge team
+
 import java.io.*;
 import java.util.*;
 class Main

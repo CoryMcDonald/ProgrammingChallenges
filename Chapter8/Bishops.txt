@@ -1,0 +1,115 @@
+
+---------- Forwarded message ----------
+From: UVa Online Judge <noreply@onlinejudge.org>
+Date: Sun, Oct 18, 2015 at 10:11 PM
+Subject: Submission 16290473 - Accepted
+To: Cory McDonald <cxm072@email.uark.edu>
+
+
+Hi,
+
+This is an automated response from UVa Online Judge.
+
+Your submission with number 16290473 for the problem 861 - Little Bishops has succeeded with verdict Accepted.
+
+Congratulations! Now it is time to try a new problem.
+
+Best regards,
+
+The UVa Online Judge team
+
+
+import java.io.*;
+import java.util.*;
+class Main
+{
+	public static void main (String args[]) 
+	{
+		StringTokenizer stringTok;
+		String input;
+		Scanner scan = new Scanner(System.in);
+		while (true){
+			input = scan.nextLine();
+			stringTok = new StringTokenizer (input);
+			if(!stringTok.hasMoreTokens()){
+				break;
+			}
+			int size = Integer.parseInt(stringTok.nextToken());
+			int k = Integer.parseInt(stringTok.nextToken());
+			if(k == 0 && size == 0){
+				break;
+			}
+			littleBishops(size, k);
+		}
+	}
+	static int count;
+	static void littleBishops(int size, int k)
+	{
+		int sum = 0;
+		if(size == 1 && k == 1){
+			System.out.println(1);
+			return;
+		}
+		if(k > size + size-2){
+			System.out.println(0);
+			return;
+		}
+		boolean[] even = new boolean[size];
+		boolean[] odd = new boolean[size-1];
+		if(size%2 == 0){
+			even = new boolean[size-1];
+			odd = new boolean[size];
+		}
+		for(int i = 0; i<k+1; i++){
+			count = 0;
+			numWays(even, odd, i, 1);
+			int a = count;
+			count = 0;
+			numWays(even, odd, k-i, 0);
+			int b = count;
+			sum += a*b;
+		}
+		numWays(even, odd, k, 0);
+		System.out.println(sum);
+	}
+	static void numWays(boolean[] even, boolean[] odd, int k, int x) 
+	{
+		if(k == 0){
+			count++;
+			return;
+		}
+		int middleo = (odd.length-1)/2;
+		int middlee = (even.length)/2;
+		int size = even.length + odd.length;
+		for(int i = x; i<size-k+1; i+=2)
+		{
+			int h = i;
+			if(h > size/2){
+				h = (size - h-1);
+			}
+			h = h/2;
+			if(i%2 == 0)
+			{
+				for(int j = middlee-h; j<middlee+h+1; j++)
+				{
+					if(!even[j]){
+						even[j] = true;
+						numWays(even, odd, k-1, i+2);
+						even[j] = false;
+					}
+				}
+			}
+			if(i%2 == 1)
+			{
+				for(int j = middleo-h; j<middleo+h+2; j++)
+				{
+					if(!odd[j]){
+						odd[j] = true;
+						numWays(even, odd, k-1, i+2);
+						odd[j] = false;
+					}
+				}
+			}
+		}
+	}
+}

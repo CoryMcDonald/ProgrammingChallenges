@@ -1,0 +1,44 @@
+
+---------- Forwarded message ----------
+From: UVa Online Judge <noreply@onlinejudge.org>
+Date: Sun, Oct 25, 2015 at 5:31 PM
+Subject: Submission 16329817 - Accepted
+To: Cory McDonald <cxm072@email.uark.edu>
+
+
+Hi,
+
+This is an automated response from UVa Online Judge.
+
+Your submission with number 16329817 for the problem 10276 - Hanoi Tower Troubles Again! has succeeded with verdict Accepted.
+
+Congratulations! Now it is time to try a new problem.
+
+Best regards,
+
+The UVa Online Judge team
+
+
+import java.io.File;
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int availablePegs;
+        int numTestCases = Integer.parseInt(scan.nextLine());
+        int[] hanoi = new int[51];
+
+        hanoi[0] = -1;
+        for (int i = 1; i <= 50; i += 2) {
+            hanoi[i] = hanoi[i - 1] + i + 1;
+            hanoi[i + 1] = hanoi[i] + i + 1;
+        }
+
+        while (numTestCases-- > 0) {
+            availablePegs = Integer.parseInt(scan.nextLine());
+
+            System.out.println(hanoi[availablePegs]);
+        }
+    }
+}

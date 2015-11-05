@@ -1,3 +1,19 @@
+
+
+On Thu, Oct 8, 2015 at 8:44 AM, UVa Online Judge <noreply@onlinejudge.org> wrote:
+Hi,
+
+This is an automated response from UVa Online Judge.
+
+Your submission with number 16231213 for the problem 10110 - Light, more light has succeeded with verdict Accepted.
+
+Congratulations! Now it is time to try a new problem.
+
+Best regards,
+
+The UVa Online Judge team
+
+
 import java.util.*;
 class Main
 {
