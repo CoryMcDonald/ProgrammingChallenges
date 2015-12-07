@@ -10,39 +10,59 @@ class Point {
 class Main {
    static Point[] P = new Point[1100];
    
-	static BigInteger Area() {
+	static BigInteger Area()
+	{
 		BigInteger a = new BigInteger("0");
-		for (int i = 1; i <= N; i++) {
+		for (int i = 1; i < N; i++) {
 			BigInteger Tmp = P[i].x.multiply(P[i + 1].y).subtract(P[i + 1].x.multiply(P[i].y));
-			a.add(Tmp);
+			
+		   
+			a= a.add(Tmp);
 		}
 		return a.abs();
 	}
 
 	static BigInteger Boundary() {
 		BigInteger B = new BigInteger("0");
-		B.subtract(new BigInteger(String.valueOf(N)));
+		B = B.subtract(new BigInteger(String.valueOf(N)));
 		for (int i = 1; i <= N; i++) {
 			BigInteger X = P[i].x.subtract(P[i + 1].x);
 			BigInteger Y = P[i].y.subtract(P[i + 1].y);
 			BigInteger Tmp = X.abs().gcd(Y.abs()).add(BigInteger.ONE);
-			B.add(Tmp);
+			B = B.add(Tmp);
 		}
 		return B;
 	}
 
    static int N = 0;
-	public static void Main(String[] args) {
+	public static void main(String[] args) {
       Scanner sc = new Scanner(System.in);
-      N = sc.nextInt();
+      int i =0;
+      
       while(sc.hasNextLine())
       {
-         for(int i=0; i<= N; i++)
+         String[] line = sc.nextLine().split(" ");
+         if(line.length == 1)
          {
-            String[] line = sc.nextLine().split(" ");
+            if(i!=0)
+            {
+               N = i;
+               P[i + 1] = P[1];
+               System.out.println((Area().subtract(Boundary()).add(new BigInteger("2"))).divide(new BigInteger("2")));
+            }
+            i =0;
+            Point temp = new Point();
+            temp.x =  BigInteger.ZERO;
+            temp.y =  BigInteger.ZERO;
+            Arrays.fill(P, temp);
+         }
+         else
+         {
+            // System.out.println("Creating new point:" + i);
             P[i] = new Point();
             P[i].x = new BigInteger(line[0]);
             P[i].y = new BigInteger(line[1]);
+            i++;
          }
       }
 // 		while (true) {
